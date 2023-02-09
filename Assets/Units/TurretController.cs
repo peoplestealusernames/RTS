@@ -45,8 +45,8 @@ public class TurretController : MonoBehaviour
     void Zero()
     {
         //TODO: Optimize to run once
-        Base.rotation = Quaternion.Euler(0, 0, 0);
-        Elevator.rotation = Quaternion.Euler(0, 0, 0);
+        Base.localRotation = Quaternion.Euler(0, 0, 0);
+        Elevator.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     void LookAtTarget()
