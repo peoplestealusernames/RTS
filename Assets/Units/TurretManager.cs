@@ -16,9 +16,6 @@ public class TurretManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.tag.Contains("Unit"))
-            return;
-
         Turret.UpdateTarget(other.gameObject);
         targets.Add(other);
     }
