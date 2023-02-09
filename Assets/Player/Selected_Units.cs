@@ -11,7 +11,12 @@ public class Selected_Units : MonoBehaviour
 
     private void Start()
     {
-        Update.AddListener(() => { Debug.Log("Update"); });
+        Update.AddListener(() => { Debug.Log(Selected); });
+    }
+
+    public HashSet<Transform> Get()
+    {
+        return Selected;
     }
 
     public void Set()
@@ -32,12 +37,12 @@ public class Selected_Units : MonoBehaviour
     }
     public void Add(Transform _Selected)
     {
-        Selected.Add(_Selected);
-        Update.Invoke();
+        if (Selected.Add(_Selected))
+            Update.Invoke();
     }
     public void Remove(Transform _Selected)
     {
-        Selected.Remove(_Selected);
-        Update.Invoke();
+        if (Selected.Remove(_Selected))
+            Update.Invoke();
     }
 }
