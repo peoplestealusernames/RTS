@@ -1,6 +1,7 @@
 //TODO: Make sure bullet collider can not trigger a collider callback
 
 //TODO: Bullet Trail
+//TODO: Bullet Trajectory
 //TODO: Sheild shadder
 //TODO: Exp effect
 
