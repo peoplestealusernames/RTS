@@ -25,9 +25,12 @@ public class Camera_Controller : MonoBehaviour
     {
         Vector3 motion = new Vector3(
             Input.GetAxisRaw("Horizontal"),
-            -Input.GetAxisRaw("Scroll") * scrollSpeed,
+            0,
             Input.GetAxisRaw("Vertical")
-        );
+        ) +
+        cameraTransform.forward * Input.GetAxisRaw("Scroll") * scrollSpeed;
+        //TODO: CLipping plane = height
+
         Vector3 target = transform.TransformPoint(motion * moveSpeed);
         transform.position = Vector3.SmoothDamp(transform.position, target, ref vel, smoothTime);
     }
