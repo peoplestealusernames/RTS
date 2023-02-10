@@ -9,7 +9,12 @@ public class UnitData : MonoBehaviour
     public float Health;
     public float Sheild;
     public NavMeshAgent Nav;
-
+    private void Start()
+    {
+        Vector3 Goal = Random.insideUnitSphere * 1900;
+        Goal.y = 0;
+        Nav.SetDestination(Goal);
+    }
     public void Damage(float Damage)
     {
         //TODO: Optimize damage calc
