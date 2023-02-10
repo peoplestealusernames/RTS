@@ -20,8 +20,7 @@ public class UnitData : MonoBehaviour
             Sheild = 0;
             Health -= Damage;
             if (Health <= 0)
-                Debug.Log("D");
-            //Destroy(this.gameObject);
+                Destroy(this.gameObject);
         }
         else
         {
