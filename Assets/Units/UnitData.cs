@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitData : MonoBehaviour
 {
-    //TODO: Impliment
     public Transform Hull;
     public float Health;
     public float Sheild;
+    public NavMeshAgent Nav;
 
     public void Damage(float Damage)
     {
