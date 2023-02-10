@@ -401,14 +401,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7336779086097605216, guid: a721d969614c7344bad4bfa518840a2f, type: 3}
-      propertyPath: maxMotorTorque
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7336779086097605216, guid: a721d969614c7344bad4bfa518840a2f, type: 3}
-      propertyPath: maxSteeringAngle
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 7857443867368197463, guid: a721d969614c7344bad4bfa518840a2f, type: 3}
       propertyPath: m_Name
       value: Rover
@@ -418,6 +410,11 @@ PrefabInstance:
 --- !u!4 &1463052487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7079416953644190638, guid: a721d969614c7344bad4bfa518840a2f, type: 3}
+  m_PrefabInstance: {fileID: 1463052486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467646726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7857443867368197463, guid: a721d969614c7344bad4bfa518840a2f, type: 3}
   m_PrefabInstance: {fileID: 1463052486}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1525726681 stripped
@@ -440,6 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1554093270}
+  - component: {fileID: 1554093271}
   m_Layer: 0
   m_Name: Units
   m_TagString: Untagged
@@ -463,6 +461,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554093271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554093269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0199a576ef1db764e8b5b8e45e6bc88c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1467646726}
+  range: 1900
 --- !u!1 &1567572347
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +566,7 @@ Transform:
   m_GameObject: {fileID: 1567572347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 1, z: 200}
+  m_LocalScale: {x: 4000, y: 1, z: 4000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
