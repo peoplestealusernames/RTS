@@ -6,10 +6,11 @@ public class Spawn_Prefab : MonoBehaviour
 {
     public GameObject prefab;
     public float range = 1900.0f;
+    public int count = 1000;
 
     private void Start()
     {
-        for (int i = 0; i < 600; i++)
+        for (int i = 0; i < count; i++)
         {
             Vector3 randomPosition = transform.position + Random.insideUnitSphere * range;
             randomPosition.y = 0;
