@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.rigidbody.tag.Contains("Unit"))
+        if (col.collider.tag.Contains("Unit"))
         {
             UnitCollide(col.rigidbody.gameObject);
         }
