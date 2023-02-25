@@ -503,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6666370229607066532}
-  - component: {fileID: 8698144623284712491}
+  - component: {fileID: 247406964369463798}
   m_Layer: 7
   m_Name: Projectors
   m_TagString: Untagged
@@ -526,7 +526,7 @@ Transform:
   m_Father: {fileID: 7079416953644190638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &8698144623284712491
+--- !u!114 &247406964369463798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 2435315954278388411}
   - component: {fileID: 7023272248234076839}
   - component: {fileID: 1562420645181266455}
+  - component: {fileID: 3332951723062980702}
   m_Layer: 7
   m_Name: Rover
   m_TagString: Unit
@@ -1232,6 +1233,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3332951723062980702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857443867368197463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065b9e28e9f0c94448b6fd42ed8d3430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: {fileID: 247406964369463798}
+  Intel: {fileID: 0}
+  AA: {fileID: 0}
 --- !u!1 &8834670173328039421
 GameObject:
   m_ObjectHideFlags: 0
