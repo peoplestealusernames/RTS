@@ -6,3 +6,8 @@
 //TODO: Exp effect
 
 //TODO: Better Rover pathing
+
+
+//Unit icons
+//TODO: Make unit icons appear based on is rendered events
+//TODO: Move icon creation into a unit script rather than cycling through all units
