@@ -494,6 +494,64 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6989282167128152099, guid: 3d3b7c1a4e12da44e9bd3804fcc2d3f6, type: 3}
+--- !u!1 &5462427948907014546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6666370229607066532}
+  - component: {fileID: 8698144623284712491}
+  m_Layer: 7
+  m_Name: Projectors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6666370229607066532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5462427948907014546}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7079416953644190638}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &8698144623284712491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5462427948907014546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19d9143a39eb3b46bc4563e9889cfbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 67f3332afe3b3f64c81d8d83a6d8657e, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_AffectsTransparency: 0
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Size: {x: 50, y: 50, z: 10}
+  m_FadeFactor: 1
+  m_Version: 2
 --- !u!1 &6178591730346776249
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +782,7 @@ Transform:
   - {fileID: 2390932984283654674}
   - {fileID: 2458337165683943297}
   m_Father: {fileID: 7079416953644190638}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6554573636406310218
 GameObject:
@@ -887,7 +945,6 @@ GameObject:
   - component: {fileID: 7562864764094938469}
   - component: {fileID: 5143037140308527597}
   - component: {fileID: 100100745105633680}
-  - component: {fileID: 1938793347767350299}
   m_Layer: 6
   m_Name: Turret Controller
   m_TagString: Untagged
@@ -902,14 +959,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7107366967807971718}
-  m_LocalRotation: {x: 0.7071064, y: -0, z: -0, w: 0.70710725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7079416953644190638}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &4460198707146849911
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -970,32 +1027,6 @@ MonoBehaviour:
   Controller: {fileID: 5143037140308527597}
   BulletRef: {fileID: 8834670173328039421}
   BulletSpeed: 100
---- !u!114 &1938793347767350299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7107366967807971718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f19d9143a39eb3b46bc4563e9889cfbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 67f3332afe3b3f64c81d8d83a6d8657e, type: 2}
-  m_DrawDistance: 1000
-  m_FadeScale: 0
-  m_StartAngleFade: 180
-  m_EndAngleFade: 180
-  m_UVScale: {x: 1, y: 1}
-  m_UVBias: {x: 0, y: 0}
-  m_AffectsTransparency: 0
-  m_DecalLayerMask: 1
-  m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0}
-  m_Size: {x: 50, y: 50, z: 10}
-  m_FadeFactor: 1
-  m_Version: 2
 --- !u!1 &7236268117053384815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6666370229607066532}
   - {fileID: 6034855007916392924}
   - {fileID: 5916349920390737908}
   m_Father: {fileID: 0}
@@ -1145,7 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59de93b25a916de49935c4af0ba0dd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hull: {fileID: 0}
+  Hull: {fileID: 4371064401843825206}
   Health: 100
   Sheild: 0
   Nav: {fileID: 1562420645181266455}
