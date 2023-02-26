@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Unit_Selector : MonoBehaviour
 {
-    public Selected_Units selected;
+    public Selected_Units Selected;
     public Camera Cam;
 
     void Update()
@@ -21,7 +21,7 @@ public class Unit_Selector : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(Cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, layerMask))
             {
-                foreach (Transform unit in selected.Get())
+                foreach (Transform unit in Selected.Get())
                 {
                     NavMeshAgent _Nav = unit.GetComponent<UnitData>().Nav;
                     if (_Nav)
