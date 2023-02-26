@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7857443867368197463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59de93b25a916de49935c4af0ba0dd47, type: 3}
+  m_Script: {fileID: 11500000, guid: 28730afbcecb06c488f99f843ee0e4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Hull: {fileID: 4371064401843825206}
@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7857443867368197463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065b9e28e9f0c94448b6fd42ed8d3430, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a4b1ff8c4a2fc444987b3d9209a849f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Range: {fileID: 247406964369463798}
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8834670173328039421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 545c177fe018ecb47861b6ae6e324bdd, type: 3}
+  m_Script: {fileID: 11500000, guid: f3acef2ef668db848af41f677a02897b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
