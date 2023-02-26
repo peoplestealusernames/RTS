@@ -24,7 +24,8 @@ public class Unit_Selector : MonoBehaviour
                 foreach (Transform unit in selected.Get())
                 {
                     NavMeshAgent _Nav = unit.GetComponent<UnitData>().Nav;
-                    _Nav.destination = hit.point;
+                    if (_Nav)
+                        _Nav.destination = hit.point;
                 }
             }
         }
