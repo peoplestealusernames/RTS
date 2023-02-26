@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Selected_Units : MonoBehaviour
 {
     //TODO: Add selection update event
-    private HashSet<Transform> Selected = new HashSet<Transform>();
-    public UnityEvent Update = new UnityEvent();
+    private static HashSet<Transform> Selected = new HashSet<Transform>();
+    public static UnityEvent Update = new UnityEvent();
 
     private void Start()
     {
@@ -44,5 +44,10 @@ public class Selected_Units : MonoBehaviour
     {
         if (Selected.Remove(_Selected))
             Update.Invoke();
+    }
+
+    public bool isSelected(Transform _Unit)
+    {
+        return Selected.Contains(_Unit);
     }
 }
