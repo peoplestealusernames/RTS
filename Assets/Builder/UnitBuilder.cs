@@ -43,7 +43,7 @@ public class UnitBuilder : MonoBehaviour
 {
     public Transform AssetHolder;
 
-    void Start()
+    private void Start()
     {
         //TODO: Fetch from mods
         UnitInfo[] Units = JsonUtility.FromJson<UnitJSON>(
@@ -58,7 +58,7 @@ public class UnitBuilder : MonoBehaviour
         }
     }
 
-    GameObject BuildUnit(UnitInfo _Unit)
+    private GameObject BuildUnit(UnitInfo _Unit)
     {
         //TODO: Optimize unit loading
         //TODO: Error handleing
@@ -68,6 +68,9 @@ public class UnitBuilder : MonoBehaviour
 
         Transform _Hull = _Base.transform.Find(_Unit.hull);
 
+        //Adds mesh collider to all
+        AddCollidersRec(_Base, _Unit);
+
         //TODO: Hash for duplicates
         foreach (TurretInfo _Turret in _Unit.turrets)
             BuildTurret(_Base.transform, _Turret, _Hull);
@@ -76,17 +79,31 @@ public class UnitBuilder : MonoBehaviour
         _RB.isKinematic = true;
 
         //TODO: No collider for certain objs
-        foreach (MeshFilter _Mesh in _Base.GetComponentsInChildren<MeshFilter>())
-        {
-            GameObject _Obj = _Mesh.gameObject;
-            MeshCollider _Col = _Obj.AddComponent<MeshCollider>();
-            _Col.convex = true;
-        }
+
 
         return _Base;
     }
 
-    void BuildTurret(Transform _Base, TurretInfo _Turret, Transform _Hull)
+    private void AddCollidersRec(GameObject _Obj, UnitInfo _Unit)
+    {
+        foreach (Transform _child in _Obj.transform)
+            AddCollidersRec(_child.gameObject, _Unit);
+
+
+        if (!_Obj.GetComponent<MeshFilter>())
+            return;
+
+        if (_Obj.GetComponent<MeshCollider>())
+        {
+            Debug.LogError("UnitBuild unit:" + _Unit.name + " collider:" + _Obj.name + " is duplicate");
+            return;
+        }
+
+        MeshCollider _Col = _Obj.AddComponent<MeshCollider>();
+        _Col.convex = true;
+    }
+
+    private void BuildTurret(Transform _Base, TurretInfo _Turret, Transform _Hull)
     {
         //TODO: more than 2 axis turret
         Transform _Hor = _Base.Find(_Turret.horizontal);
@@ -99,7 +116,7 @@ public class UnitBuilder : MonoBehaviour
             BulletTurret(_Base, _Turret, _Ele);
     }
 
-    void BulletTurret(Transform _Base, TurretInfo _Turret, Transform _Ele)
+    private void BulletTurret(Transform _Base, TurretInfo _Turret, Transform _Ele)
     {
         //TODO: MultiBullet/Barrel turret
         Transform _Bullet = _Base.Find(_Turret.bullet.name);
@@ -110,7 +127,7 @@ public class UnitBuilder : MonoBehaviour
         BulletBuilder(_Base, _Turret.bullet, _Bullet.gameObject);
     }
 
-    void BulletBuilder(Transform _Base, BulletInfo _BulletInfo, GameObject _Bullet)
+    private void BulletBuilder(Transform _Base, BulletInfo _BulletInfo, GameObject _Bullet)
     {
         //TODO: Bullet Config
         Rigidbody _RB = _Bullet.AddComponent<Rigidbody>();
