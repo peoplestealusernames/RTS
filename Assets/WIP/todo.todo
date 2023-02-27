@@ -13,3 +13,4 @@
 //TODO: Move icon creation into a unit script rather than cycling through all units
 
 //TODO: make unit turrets intanceable for copys of the same turret
+//TODO: move unit detection to its own 2d scene
