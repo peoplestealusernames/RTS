@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoverFire : MonoBehaviour
+public class ProjectileFire : MonoBehaviour
 {
     public TurretController Controller;
     public GameObject BulletRef;

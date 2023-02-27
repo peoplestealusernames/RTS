@@ -1,0 +1,9 @@
+{
+    "units": [
+        {
+            "name": "Rover",
+            "displayName": "Rover",
+            "model": "model"
+        }
+    ]
+}
