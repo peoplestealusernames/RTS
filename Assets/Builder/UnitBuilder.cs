@@ -60,15 +60,18 @@ public class UnitBuilder : MonoBehaviour
 
         //TODO: Hash for duplicates
         foreach (TurretInfo _Turret in _Unit.turrets)
-        {
-            //TODO: more than 2 axis turret
-            Transform _Hor = _Base.transform.Find(_Turret.horizontal);
-            Transform _Ele = _Base.transform.Find(_Turret.elevator);
-
-            _Hor.transform.parent = _Hull;
-            _Ele.transform.parent = _Hor;
-        }
+            BuildTurret(_Turret, _Base.transform, _Hull);
 
         return _Base;
+    }
+
+    void BuildTurret(TurretInfo _Turret, Transform _Base, Transform _Hull)
+    {
+        //TODO: more than 2 axis turret
+        Transform _Hor = _Base.Find(_Turret.horizontal);
+        Transform _Ele = _Base.Find(_Turret.elevator);
+
+        _Hor.transform.parent = _Hull;
+        _Ele.transform.parent = _Hor;
     }
 }
