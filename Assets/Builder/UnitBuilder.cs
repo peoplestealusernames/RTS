@@ -72,6 +72,17 @@ public class UnitBuilder : MonoBehaviour
         foreach (TurretInfo _Turret in _Unit.turrets)
             BuildTurret(_Base.transform, _Turret, _Hull);
 
+        Rigidbody _RB = _Base.AddComponent<Rigidbody>();
+        _RB.isKinematic = true;
+
+        //TODO: No collider for certain objs
+        foreach (MeshFilter _Mesh in _Base.GetComponentsInChildren<MeshFilter>())
+        {
+            GameObject _Obj = _Mesh.gameObject;
+            MeshCollider _Col = _Obj.AddComponent<MeshCollider>();
+            _Col.convex = true;
+        }
+
         return _Base;
     }
 
