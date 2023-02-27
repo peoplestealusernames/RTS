@@ -3,7 +3,15 @@
         {
             "name": "Rover",
             "displayName": "Rover",
-            "model": "model"
+            "model": "model",
+            "hull": "Hull",
+            "turrets": [
+                {
+                    "name": "Main",
+                    "horizontal": "Turret Base",
+                    "elevator": "Barrel Base"
+                }
+            ]
         }
     ]
 }

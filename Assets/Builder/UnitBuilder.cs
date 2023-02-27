@@ -1,14 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [System.Serializable]
 public class UnitInfo
 {
     public string name;
     public string displayName;
+
     public string model;
+    public string hull;
+
+    public TurretInfo[] turrets;
 }
+
+[System.Serializable]
+public class TurretInfo
+{
+    public string name;
+    public string horizontal;
+    public string elevator;
+}
+
 [System.Serializable]
 class UnitJSON
 {
@@ -17,6 +31,7 @@ class UnitJSON
 
 public class UnitBuilder : MonoBehaviour
 {
+    public Transform AssetHolder;
 
     void Start()
     {
@@ -25,6 +40,7 @@ public class UnitBuilder : MonoBehaviour
             Resources.Load<TextAsset>("Data/units").text
         ).units;
 
+        //TODO: Hash for dupes/mods
         for (int i = 0; i < Units.Length; i++)
         {
             GameObject _t = GameObject.Instantiate(BuildUnit(Units[i]));
@@ -34,7 +50,24 @@ public class UnitBuilder : MonoBehaviour
 
     GameObject BuildUnit(UnitInfo _Unit)
     {
-        GameObject _Base = Resources.Load<GameObject>("Units/" + _Unit.name + "/" + _Unit.model);
+        //TODO: Optimize unit loading
+        //TODO: Error handleing
+        GameObject _Load = Resources.Load<GameObject>("Units/" + _Unit.name + "/" + _Unit.model);
+        GameObject _Base = Instantiate(_Load, AssetHolder);
+        _Base.name = _Unit.name;
+
+        Transform _Hull = _Base.transform.Find(_Unit.hull);
+
+        //TODO: Hash for duplicates
+        foreach (TurretInfo _Turret in _Unit.turrets)
+        {
+            //TODO: more than 2 axis turret
+            Transform _Hor = _Base.transform.Find(_Turret.horizontal);
+            Transform _Ele = _Base.transform.Find(_Turret.elevator);
+
+            _Hor.transform.parent = _Hull;
+            _Ele.transform.parent = _Hor;
+        }
 
         return _Base;
     }
