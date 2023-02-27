@@ -5,6 +5,9 @@
             "displayName": "Rover",
             "model": "model",
             "hull": "Hull",
+            "noCollider": [
+                "Bullet"
+            ],
             "turrets": [
                 {
                     "name": "Main",

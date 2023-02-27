@@ -9,6 +9,7 @@ public class UnitInfo
     public string displayName;
 
     public string model;
+    public List<string> noCollider = new List<string>();
     public string hull;
 
     public TurretInfo[] turrets;
@@ -89,6 +90,9 @@ public class UnitBuilder : MonoBehaviour
         foreach (Transform _child in _Obj.transform)
             AddCollidersRec(_child.gameObject, _Unit);
 
+
+        if (_Unit.noCollider.Contains(_Obj.name))
+            return;
 
         if (!_Obj.GetComponent<MeshFilter>())
             return;
