@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 [System.Serializable]
 public class UnitInfo
@@ -21,6 +20,17 @@ public class TurretInfo
     public string name;
     public string horizontal;
     public string elevator;
+
+    public string weaponType;
+    public BulletInfo bullet;
+}
+
+[System.Serializable]
+public class BulletInfo
+{
+    public string name;
+    public float damage;
+    public float speed;
 }
 
 [System.Serializable]
@@ -60,12 +70,12 @@ public class UnitBuilder : MonoBehaviour
 
         //TODO: Hash for duplicates
         foreach (TurretInfo _Turret in _Unit.turrets)
-            BuildTurret(_Turret, _Base.transform, _Hull);
+            BuildTurret(_Base.transform, _Turret, _Hull);
 
         return _Base;
     }
 
-    void BuildTurret(TurretInfo _Turret, Transform _Base, Transform _Hull)
+    void BuildTurret(Transform _Base, TurretInfo _Turret, Transform _Hull)
     {
         //TODO: more than 2 axis turret
         Transform _Hor = _Base.Find(_Turret.horizontal);
@@ -73,5 +83,33 @@ public class UnitBuilder : MonoBehaviour
 
         _Hor.transform.parent = _Hull;
         _Ele.transform.parent = _Hor;
+
+        if (_Turret.weaponType == "bullet")
+            BulletTurret(_Base, _Turret, _Ele);
+    }
+
+    void BulletTurret(Transform _Base, TurretInfo _Turret, Transform _Ele)
+    {
+        //TODO: MultiBullet/Barrel turret
+        Transform _Bullet = _Base.Find(_Turret.bullet.name);
+
+        _Bullet.SetParent(_Ele);
+        _Bullet.gameObject.SetActive(false);
+
+        BulletBuilder(_Base, _Turret.bullet, _Bullet.gameObject);
+    }
+
+    void BulletBuilder(Transform _Base, BulletInfo _BulletInfo, GameObject _Bullet)
+    {
+        //TODO: Bullet Config
+        Rigidbody _RB = _Bullet.AddComponent<Rigidbody>();
+        _RB.mass = 20;
+
+        MeshCollider _Col = _Bullet.AddComponent<MeshCollider>();
+        _Col.convex = true;
+
+        Bullet _script = _Bullet.AddComponent<Bullet>();
+        _script.Damage = _BulletInfo.damage;
+        _script.Speed = _BulletInfo.speed;
     }
 }

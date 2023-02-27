@@ -8,6 +8,12 @@
             "turrets": [
                 {
                     "name": "Main",
+                    "weaponType": "bullet",
+                    "bullet": {
+                        "name": "Bullet",
+                        "damage": 5,
+                        "speed": 200
+                    },
                     "horizontal": "Turret Base",
                     "elevator": "Barrel Base"
                 }
